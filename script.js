@@ -1,3 +1,8 @@
+function updateCounter() {
+  const count = document.getElementById('taskList').children.length;
+  document.getElementById('counter').textContent = `Total Tasks: ${count}`;
+}
+
 function addTask() {
   const taskInput = document.getElementById('taskInput');
   const taskList = document.getElementById('taskList');
@@ -5,4 +10,5 @@ function addTask() {
   li.textContent = taskInput.value;
   taskList.appendChild(li);
   taskInput.value = '';
+  updateCounter();
 }
